@@ -1,28 +1,20 @@
 //
-//  ContentView.swift
+//  SwiftUIView.swift
 //  codeWithChris
 //
-//  Created by Rao Aaraf Younus on 2023-03-23.
+//  Created by Rao Aaraf Younus on 2023-03-31.
 //
 
 import SwiftUI
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridView()
-    }
-}
-
-struct GridView: View {
+struct SwiftUIView: View {
     @State private var text: String = ""
-    
     
     var body: some View {
         
-        
         VStack{
             HStack{
-                Image(systemName: "xmark.circle")
+                Image(systemName: "arrow.left")
                     .foregroundColor(.black)
                     .font(.system(size: 30))
                     .opacity(0.8).padding(2)
@@ -32,7 +24,7 @@ struct GridView: View {
             }
             HStack{
                 
-                Text("Enter Your Email Address")
+                Text("What kind of account\nwould you like to open\ntoday?")
                     .font(.title)
                     .fontWeight(.semibold)
                 Spacer()
@@ -40,7 +32,7 @@ struct GridView: View {
             
             HStack{
                 
-                Text("Your Email")
+                Text("You can add another account later")
                     .font(.footnote)
                     .fontWeight(.light)
                 Spacer()
@@ -64,33 +56,25 @@ struct GridView: View {
             Spacer()
             
             
-            VStack{
-                Text("By registering you accept our terms of use \n and privacy policy")
-                    .font(.footnote)
-                    .fontWeight(.light)
-                    .multilineTextAlignment(.center)
-                
-                Button(action: {
-                    print("Button tapped")
-                }) {
-                    Text("Continue")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
+            HStack{
+                Image(systemName: "person.circle")
+                VStack{
+                    Text("Person Account")
+                        .fontWeight(.semibold)
+                    Text("Send and Spend and receive money\narround the world for free")
+                        .font(.footnote)
                 }
+                
             }
             
             
             
         }.padding(16.0)
-        
-        
-        
     }
-    
-    
 }
 
-
+struct SwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        SwiftUIView()
+    }
+}
